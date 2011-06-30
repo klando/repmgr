@@ -838,7 +838,12 @@ The configuration file should have 3 lines:
 
 2. node: An integer that identify our node in the cluster
 
-3. conninfo: A string (single quoted) specifying how we can connect to this node's PostgreSQL service
+3. conninfo: A string (single quoted) specifying how we can connect to this
+   node's PostgreSQL service. The string can contain any parameter allowed
+   by PQconnectdb ( http://www.postgresql.org/docs/9.0/static/libpq-connect.html )
+
+:Note: TCP keepalives parameters can be enforced in the conninfo (*keepalives*,
+       *keepalives_idle*, *keepalives_interval* and *keepalives_count*)
 
 repmgr
 ------
