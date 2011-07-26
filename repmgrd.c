@@ -758,7 +758,10 @@ CheckPrimaryConnection(void)
 		}
 		else
 		{
-			log_info(_("%s: Connection to master has been restored.\n"), progname);
+			if ( connection_retries > 0)
+			{
+				log_info(_("%s: Connection to master has been restored.\n"), progname);
+			}
 			break;
 		}
 	}
